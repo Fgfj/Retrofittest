@@ -82,10 +82,11 @@ public class Erweimacode extends AppCompatActivity {
     public void 去圆形图片切换页面(View view) {startActivity(new Intent(this, Roundimage.class));
     }
 
-//    app图标
+
     @Override
     protected void onResume() {
         super.onResume();
+        //    app图标
         sendBadgeNumber();
     }
 
@@ -141,7 +142,6 @@ public class Erweimacode extends AppCompatActivity {
 //           }else {
 //               imageView.setImageBitmap(bitmap);
 //           }
-//
 //        } catch (WriterException e) {
 //            e.printStackTrace();
 //        }
