@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import testvh.yz.com.retrofittest.R;
 
+/**
+ * 融云即时聊天
+ */
 public class Rongyun_Act extends AppCompatActivity {
 
     @Override
