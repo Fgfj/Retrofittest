@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="testvh.yz.com.retrofittest">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="testvh.yz.com.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/iocntest"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".v.Login_Act" />
+        <activity android:name=".Erweimacode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--h5启动应用-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="pay.com"
+                    android:pathPrefix="/mpos"
+                    android:scheme="finance" />
+            </intent-filter>
+            <!--图标数字显示-->
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="testvh.yz.com.karics.karics.library.zxing.android.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name="testvh.yz.com.InterFtest.InterFtest_Act" />
+
+        <service android:name="testvh.yz.com.WeigiteTest.TimerService" />
+
+        <receiver android:name="testvh.yz.com.WeigiteTest.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <!-- name必须写成这样 -->
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider" />
+            <!-- meta-data里定义配置文件，name必须写成这样 -->
+        </receiver>
+
+        <activity android:name="testvh.yz.com.Cirleroundview.Charttest" />
+        <activity android:name="testvh.yz.com.UIstatus.UiStatus" />
+        <activity android:name="testvh.yz.com.Banner.BannerAct" />
+        <activity android:name="testvh.yz.com.SQL.Act_SQL" />
+        <activity android:name="testvh.yz.com.RoundingImangeview.Roundimage"></activity>
+    </application>
+
+</manifest>

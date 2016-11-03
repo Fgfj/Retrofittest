@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="testvh.yz.com.retrofittest.Erweimacode">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:onClick="go"
+        android:text="扫描二维码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:onClick="生成二维码"
+        android:text="生成二维码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:onClick="去自定义图表"
+        android:text="图表"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:onClick="清楚数据库"
+        android:text="greendao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:onClick="去UI切换页面"
+        android:text="UI切换"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <Button
+            android:onClick="去MVP切换页面"
+            android:text="MVP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:onClick="去banner切换页面"
+            android:text="banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:onClick="去圆形图片切换页面"
+            android:text="圆形图片"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageerweima"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
+</LinearLayout>

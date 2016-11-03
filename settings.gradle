@@ -1,0 +1,4 @@
+include ':app', ':newqrcodescan', ':qrCodeScanw', ':status-ui'
+project(':qrCodeScanw').projectDir = new File('qrCodeScan')
+include ':androidzxing'
+include ':xListView'

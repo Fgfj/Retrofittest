@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="testvh.yz.com.RoundingImangeview.Roundimage">
+    <!--圆角图片-->
+    <testvh.yz.com.RoundingImangeview.RoundAngleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:istop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/as"
+        app:roundHeight="20dp"
+        app:roundWidth="20dp"/>
+    <!--圆形图片 使用于头像-->
+    <testvh.yz.com.RoundingImangeview.RoundImageView
+             android:layout_width="50dp"
+             android:layout_height="50dp"
+             android:src="@drawable/as"
+        app:border_inside_color="#bc0978"
+        app:border_outside_color="#ba3456"
+        app:border_thickness="1dp"
+             />
+    <!--采用shap放入非.9图 圆形图片有问题-->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/changeloginbtn_shap"
+        android:src="@drawable/ic_launcher"/>
+</LinearLayout>
