@@ -24,19 +24,22 @@
         <activity android:name=".Erweimacode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!--h5启动应用-->
+            <!-- h5启动应用 -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="pay.com"
                     android:pathPrefix="/mpos"
                     android:scheme="finance" />
             </intent-filter>
-            <!--图标数字显示-->
+            <!-- 图标数字显示 -->
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
             </intent-filter>
@@ -65,7 +68,8 @@
         <activity android:name="testvh.yz.com.UIstatus.UiStatus" />
         <activity android:name="testvh.yz.com.Banner.BannerAct" />
         <activity android:name="testvh.yz.com.SQL.Act_SQL" />
-        <activity android:name="testvh.yz.com.RoundingImangeview.Roundimage"></activity>
+        <activity android:name="testvh.yz.com.RoundingImangeview.Roundimage" />
+        <activity android:name="testvh.yz.com.RongyunIM.Rongyun_Act"></activity>
     </application>
 
 </manifest>

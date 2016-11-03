@@ -55,6 +55,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+    <Button
+        android:onClick="去融云片切换页面"
+        android:text="融云IM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/imageerweima"
