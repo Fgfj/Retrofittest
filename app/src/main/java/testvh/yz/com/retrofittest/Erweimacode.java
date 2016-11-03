@@ -176,7 +176,7 @@ public class Erweimacode extends AppCompatActivity {
         return bitmap;
     }
     private void sendBadgeNumber() {
-        Log.e("Build",Build.BRAND+"==="+ Build.PRODUCT+"==="+Build.MANUFACTURER+"==Android系统定制商,手机制造商, 硬件制造商 ");
+        Log.e("Build",Build.BRAND+"==="+ Build.PRODUCT+"==="+Build.MANUFACTURER+"==="+Erweimacode.class.getName()+"==Android系统定制商,手机制造商, 硬件制造商 ");
         String number = "35";
         if (TextUtils.isEmpty(number)) {
             number = "0";
