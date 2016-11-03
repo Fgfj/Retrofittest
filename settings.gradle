@@ -1,4 +1,4 @@
-include ':app', ':newqrcodescan', ':qrCodeScanw', ':status-ui'
+include ':app', ':newqrcodescan', ':qrCodeScanw', ':status-ui', ':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable'
 project(':qrCodeScanw').projectDir = new File('qrCodeScan')
 include ':androidzxing'
 include ':xListView'
