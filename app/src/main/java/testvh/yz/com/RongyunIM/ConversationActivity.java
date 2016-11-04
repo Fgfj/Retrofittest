@@ -49,7 +49,7 @@ public class ConversationActivity extends FragmentActivity {
                     Toast.makeText(ConversationActivity.this,"对方正在讲话",Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
-//                    Toast.makeText(ConversationActivity.this,"",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ConversationActivity.this,"没有用户正在输入",Toast.LENGTH_SHORT).show();
                     break;
             }
 
