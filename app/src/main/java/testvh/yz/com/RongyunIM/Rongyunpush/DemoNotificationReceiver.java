@@ -12,6 +12,7 @@ import io.rong.push.notification.PushNotificationMessage;
 import testvh.yz.com.retrofittest.R;
 
 /**
+ * 自定义广播接收器
  * Created by yz on 2016/11/4.
  */
 public class DemoNotificationReceiver extends PushMessageReceiver {

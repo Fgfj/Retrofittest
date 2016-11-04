@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.Collection;
@@ -79,13 +80,16 @@ public class ConversationActivity extends FragmentActivity {
                         if (objectName.equals(textTag.value())) {
                             //显示“对方正在输入”
                             mHandler.sendEmptyMessage(0);
+                            Log.d("LoginActivity", "--onSuccess" + "sendEmptyMessage"+0);
                         } else if (objectName.equals(voiceTag.value())) {
                             //显示"对方正在讲话"
                             mHandler.sendEmptyMessage(1);
+                            Log.d("LoginActivity", "--onSuccess" +  "sendEmptyMessage"+1);
                         }
                     } else {
                         //当前会话没有用户正在输入，标题栏仍显示原来标题
                         mHandler.sendEmptyMessage(2);
+                        Log.d("LoginActivity", "--onSuccess" +  "sendEmptyMessage"+2);
                     }
                 }
             }
