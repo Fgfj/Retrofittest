@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -49,6 +50,7 @@ import testvh.yz.com.karics.karics.library.zxing.android.CaptureActivity;
 public class Erweimacode extends AppCompatActivity {
     private final int REQUEST_CODE = 110;
     private ImageView imageView;
+    private TextView tokentextView;
 
 
     @Override
@@ -56,6 +58,7 @@ public class Erweimacode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_erweimacode);
         imageView = (ImageView) findViewById(R.id.imageerweima);
+        tokentextView = (TextView) findViewById(R.id.gettoken);
     }
     //扫描二维码
     public void go(View view) {
@@ -84,7 +87,9 @@ public class Erweimacode extends AppCompatActivity {
     }
     public void 去融云片切换页面(View view) {startActivity(new Intent(this, Rongyun_Act.class));
     }
+    public void 获取token(View view) {
 
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -263,6 +268,7 @@ public class Erweimacode extends AppCompatActivity {
         sendBroadcast(localIntent);
         Toast.makeText(this, "Samsumg," + "isSendOk", Toast.LENGTH_LONG).show();
     }
+
 
 
 }
