@@ -2,6 +2,7 @@ package testvh.yz.com;
 
 import android.app.Application;
 
+import io.rong.imkit.RongIM;
 import testvh.yz.com.SQL.GreenDaoManager;
 
 /**
@@ -17,5 +18,6 @@ public class MyApplication extends Application {
         super.onCreate();
         instance = this;
         GreenDaoManager.getInstance();
+        RongIM.init(this);
     }
 }

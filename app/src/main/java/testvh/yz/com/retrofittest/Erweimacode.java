@@ -58,7 +58,6 @@ public class Erweimacode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_erweimacode);
         imageView = (ImageView) findViewById(R.id.imageerweima);
-        tokentextView = (TextView) findViewById(R.id.gettoken);
     }
     //扫描二维码
     public void go(View view) {
@@ -86,9 +85,6 @@ public class Erweimacode extends AppCompatActivity {
     public void 去圆形图片切换页面(View view) {startActivity(new Intent(this, Roundimage.class));
     }
     public void 去融云片切换页面(View view) {startActivity(new Intent(this, Rongyun_Act.class));
-    }
-    public void 获取token(View view) {
-
     }
     @Override
     protected void onResume() {
