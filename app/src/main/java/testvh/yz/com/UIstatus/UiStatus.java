@@ -14,6 +14,9 @@ import org.ayo.view.status.StatusUIcallBackListener;
 
 import testvh.yz.com.retrofittest.R;
 
+/**
+ * UI切换
+ */
 public class UiStatus extends AppCompatActivity {
     StatusUIManager statusUIManager;
     View contentView;
