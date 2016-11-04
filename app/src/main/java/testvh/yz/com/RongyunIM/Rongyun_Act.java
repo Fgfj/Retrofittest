@@ -74,25 +74,21 @@ public class Rongyun_Act extends AppCompatActivity {
                     }
                 });
     }
-
     public void 启动会话界面(View view) {
         //启动会话界面
         if (RongIM.getInstance() != null)
             RongIM.getInstance().startPrivateChat(this, "26594", "title");
     }
-
     public void 启动会话列表界面(View view) {
         //启动会话列表界面
         if (RongIM.getInstance() != null)
             RongIM.getInstance().startConversationList(this);
     }
-
     public void 启动聚合会话列表界面(View view) {
         //启动聚合会话列表界面
         if (RongIM.getInstance() != null)
             RongIM.getInstance().startSubConversationList(this, Conversation.ConversationType.GROUP);
     }
-
     public void 设置用户信息(View view) {
         RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
             @Override
@@ -101,8 +97,6 @@ public class Rongyun_Act extends AppCompatActivity {
             }
         },true);
     }
-
-
     public void 刷新用户信息(View view) {
         /**
          * 刷新用户缓存数据。
@@ -115,8 +109,6 @@ public class Rongyun_Act extends AppCompatActivity {
                 new UserInfo("26594", "26594", Uri.parse("http://rongcloud-web.qiniudn.com/docs_demo_rongcloud_logo.png")));
 
     }
-
-
     public void 创建讨论组会话并进入会话界面(View view) {
         List<String> listchat=new ArrayList<>();
         listchat.add("1");
@@ -132,7 +124,6 @@ public class Rongyun_Act extends AppCompatActivity {
                     Log.d("LoginActivity", "--onSuccess" + s);
                     textView2.setText(s);
                 }
-
                 @Override
                 public void onError(RongIMClient.ErrorCode errorCode) {
                     Log.d("LoginActivity", "--errorCode" + errorCode);
@@ -141,15 +132,12 @@ public class Rongyun_Act extends AppCompatActivity {
         }else {
             //进入讨论组
             RongIM.getInstance().startDiscussionChat(this,s,"神之讨论组");
-
         }
     }
     private NotificationManager notificationManager;
     private class MyReceiveMessageListener implements RongIMClient.OnReceiveMessageListener {
-
         /**
          * 收到消息的处理。
-         *
          * @param message 收到的消息实体。
          * @param left    剩余未拉取消息数目。
          * @return 收到消息是否处理完成，true 表示走自已的处理方式，false 走融云默认处理方式。
@@ -158,18 +146,17 @@ public class Rongyun_Act extends AppCompatActivity {
         public boolean onReceived(Message message, int left) {
             //开发者根据自己需求自行处理
             MessageContent content = message.getContent();
-            TextMessage textMessage = (TextMessage) content;
+            if(content==null)
+                return false;
             Log.e("LoginActivity",
-                    "接受消息监听ReceiveMessageListener===="+textMessage.getContent());
+                    "接受消息监听ReceiveMessageListener===="+ content.toString());
             return false;
         }
     }
     private static final String TAG="LoginActivity";
     private class MySendMessageListener implements RongIM.OnSendMessageListener {
-
         /**
          * 消息发送前监听器处理接口（是否发送成功可以从 SentStatus 属性获取）。
-         *
          * @param message 发送的消息实例。
          * @return 处理后的消息实例。
          */
@@ -178,10 +165,8 @@ public class Rongyun_Act extends AppCompatActivity {
             //开发者根据自己需求自行处理逻辑
             return message;
         }
-
         /**
          * 消息在 UI 展示后执行/自己的消息发出后执行,无论成功或失败。
-         *
          * @param message              消息实例。
          * @param sentMessageErrorCode 发送消息失败的状态码，消息发送成功 SentMessageErrorCode 为 null。
          * @return true 表示走自已的处理方式，false 走融云默认处理方式。
@@ -200,9 +185,7 @@ public class Rongyun_Act extends AppCompatActivity {
                     //你在他的黑名单中
                 }
             }
-
             MessageContent messageContent = message.getContent();
-
             if (messageContent instanceof TextMessage) {//文本消息
                 TextMessage textMessage = (TextMessage) messageContent;
                 Log.d(TAG, "onSent-TextMessage:" + textMessage.getContent());
@@ -218,7 +201,6 @@ public class Rongyun_Act extends AppCompatActivity {
             } else {
                 Log.d(TAG, "onSent-其他消息，自己来判断处理");
             }
-
             return false;
         }
     }
@@ -226,9 +208,7 @@ public class Rongyun_Act extends AppCompatActivity {
 
         @Override
         public void onChanged(ConnectionStatus connectionStatus) {
-
             switch (connectionStatus){
-
                 case CONNECTED://连接成功。
                     Log.d(TAG, "连接成功");
                     break;

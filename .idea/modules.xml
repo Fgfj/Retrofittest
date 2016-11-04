@@ -6,8 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable.iml" filepath="$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidzxing/androidzxing.iml" filepath="$PROJECT_DIR$/androidzxing/androidzxing.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/newqrcodescan/newqrcodescan.iml" filepath="$PROJECT_DIR$/newqrcodescan/newqrcodescan.iml" />
-      <module fileurl="file://$PROJECT_DIR$/qrCodeScan/qrCodeScanw.iml" filepath="$PROJECT_DIR$/qrCodeScan/qrCodeScanw.iml" />
       <module fileurl="file://$PROJECT_DIR$/status-ui/status-ui.iml" filepath="$PROJECT_DIR$/status-ui/status-ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/xListView/xListView.iml" filepath="$PROJECT_DIR$/xListView/xListView.iml" />
     </modules>
