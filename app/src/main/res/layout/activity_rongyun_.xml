@@ -9,6 +9,10 @@
         android:id="@+id/rongyunserverconntect"
         android:layout_width="wrap_content"
         android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/rongyuchartteamid"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +44,12 @@
             android:layout_height="wrap_content" />
         <Button
             android:onClick="刷新用户信息"
-            android:text="刷新用户信息"
+            android:text="刷新用户缓存信息"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:onClick="创建讨论组会话并进入会话界面"
+            android:text="创建讨论组会话并进入会话界面"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
