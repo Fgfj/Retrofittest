@@ -69,11 +69,11 @@
         <activity android:name="testvh.yz.com.Banner.BannerAct" />
         <activity android:name="testvh.yz.com.SQL.Act_SQL" />
         <activity android:name="testvh.yz.com.RoundingImangeview.Roundimage" />
-        <activity android:name="testvh.yz.com.RongyunIM.Rongyun_Act"></activity>
-        <activity android:name="testvh.yz.com.RongyunIM.ConversationListActivity"
+        <activity android:name="testvh.yz.com.RongyunIM.Rongyun_Act" />
+        <activity
+            android:name="testvh.yz.com.RongyunIM.ConversationListActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -85,7 +85,8 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name="testvh.yz.com.RongyunIM.SubConversationListActivtiy"
+        <activity
+            android:name="testvh.yz.com.RongyunIM.SubConversationListActivtiy"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
@@ -99,7 +100,8 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name="testvh.yz.com.RongyunIM.ConversationActivity"
+        <activity
+            android:name="testvh.yz.com.RongyunIM.ConversationActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
@@ -113,9 +115,10 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
+
         <receiver
-            android:exported="true"
-            android:name="testvh.yz.com.RongyunIM.Rongyunpush.DemoNotificationReceiver">
+            android:name="testvh.yz.com.RongyunIM.Rongyunpush.DemoNotificationReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
                 <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
@@ -123,6 +126,8 @@
                 <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
             </intent-filter>
         </receiver>
+
+        <activity android:name="testvh.yz.com.Perssion.PER_Act"></activity>
     </application>
 
 </manifest>
