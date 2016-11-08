@@ -31,6 +31,7 @@ import java.util.List;
 
 import testvh.yz.com.Banner.BannerAct;
 import testvh.yz.com.Cirleroundview.Charttest;
+import testvh.yz.com.Perssion.PER_Act;
 import testvh.yz.com.RongyunIM.Rongyun_Act;
 import testvh.yz.com.RoundingImangeview.Roundimage;
 import testvh.yz.com.SQL.Act_SQL;
@@ -85,6 +86,8 @@ public class Erweimacode extends AppCompatActivity {
     public void 去圆形图片切换页面(View view) {startActivity(new Intent(this, Roundimage.class));
     }
     public void 去融云片切换页面(View view) {startActivity(new Intent(this, Rongyun_Act.class));
+    }
+    public void 去权限切换页面(View view) {startActivity(new Intent(this, PER_Act.class));
     }
     @Override
     protected void onResume() {

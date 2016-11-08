@@ -55,11 +55,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <Button
         android:onClick="去融云片切换页面"
         android:text="融云IM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+        <Button
+            android:onClick="去权限切换页面"
+            android:text="权限"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageerweima"
