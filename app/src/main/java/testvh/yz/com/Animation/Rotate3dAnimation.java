@@ -1,5 +1,6 @@
 package testvh.yz.com.Animation;
 
+import android.content.Context;
 import android.graphics.Camera;
 import android.graphics.Matrix;
 import android.view.animation.Animation;
@@ -27,7 +28,7 @@ public class Rotate3dAnimation extends Animation {
      * @param depthZ		最远到达的z轴坐标
      * @param reverse 		true 表示由从0到depthZ，false相反
      */
-    public Rotate3dAnimation(float fromDegrees, float toDegrees,
+    public Rotate3dAnimation(Context context, float fromDegrees, float toDegrees,
                              float centerX, float centerY, float depthZ, boolean reverse) {
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
@@ -35,8 +36,10 @@ public class Rotate3dAnimation extends Animation {
         mCenterY = centerY;
         mDepthZ = depthZ;
         mReverse = reverse;
-    }
 
+        // 获取手机像素密度 （即dp与px的比例）
+        scale = context.getResources().getDisplayMetrics().density;
+    }
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {
         super.initialize(width, height, parentWidth, parentHeight);
