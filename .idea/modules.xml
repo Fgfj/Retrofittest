@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/InitActivity/InitActivity.iml" filepath="$PROJECT_DIR$/InitActivity/InitActivity.iml" />
       <module fileurl="file://$PROJECT_DIR$/Retrofittest.iml" filepath="$PROJECT_DIR$/Retrofittest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable.iml" filepath="$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidzxing/androidzxing.iml" filepath="$PROJECT_DIR$/androidzxing/androidzxing.iml" />

@@ -25,8 +25,10 @@ import com.google.zxing.common.BitMatrix;
 import com.squareup.picasso.Picasso;
 import com.stx.xhb.xbanner.XBanner;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import testvh.yz.com.Animation.Traslation_Act;
@@ -46,6 +48,7 @@ import testvh.yz.com.SQL.StudentDao;
 import testvh.yz.com.SQL.Teacher;
 import testvh.yz.com.SQL.TeacherDao;
 import testvh.yz.com.UIstatus.UiStatus;
+import testvh.yz.com.VitamioTest.Vita_ActTest;
 import testvh.yz.com.karics.karics.library.zxing.android.CaptureActivity;
 
 
@@ -54,13 +57,17 @@ public class Erweimacode extends AppCompatActivity {
     private ImageView imageView;
     private TextView tokentextView;
 
+    String s="http://bestin.net.cn/html/temp/talentShow/201611/2016111015432680077.jpg?width=2624&height=1968";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_erweimacode);
         imageView = (ImageView) findViewById(R.id.imageerweima);
+        String[] split = s.split("=");
+        Log.v("split", Arrays.toString(split));
     }
+
     //扫描二维码
     public void go(View view) {
         Intent intentthiss = new Intent(this,CaptureActivity.class);
@@ -91,6 +98,8 @@ public class Erweimacode extends AppCompatActivity {
     public void 去权限切换页面(View view) {startActivity(new Intent(this, PER_Act.class));
     }
     public void 图片旋转(View view) {startActivity(new Intent(this, Traslation_Act.class));
+    }
+    public void GoVitamio(View view) {startActivity(new Intent(this, Vita_ActTest.class));
     }
     @Override
     protected void onResume() {

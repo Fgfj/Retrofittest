@@ -44,4 +44,5 @@ dependencies {
     compile 'org.greenrobot:greendao:3.1.0'
     compile project(':status-ui')
     compile project(':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable')
+    compile project(':InitActivity')
 }
