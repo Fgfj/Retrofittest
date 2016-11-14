@@ -26,7 +26,7 @@ public class Vita_ActTest extends AppCompatActivity {
         setContentView(R.layout.activity_vita__act_test);
         ButterKnife.inject(this);
 
-//        videoView.setVideoPath(Environment.getExternalStorageDirectory().getPath() + "//mlxm.mp4");
+// ss       videoView.setVideoPath(Environment.getExternalStorageDirectory().getPath() + "//mlxm.mp4");
         videoView.setVideoPath("http://www.modrails.com/videos/passenger_nginx.mov");
         videoView.setVideoQuality(View.DRAWING_CACHE_QUALITY_LOW);
         mediaController = new MediaController(this);
