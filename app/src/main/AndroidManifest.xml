@@ -130,7 +130,8 @@
         </receiver>
 
         <activity android:name="testvh.yz.com.Perssion.PER_Act" />
-        <activity android:name="testvh.yz.com.Animation.Traslation_Act"></activity>
+        <activity android:name="testvh.yz.com.Animation.Traslation_Act" />
+        <activity android:name="testvh.yz.com.Vitamio.Vita_Act"></activity>
     </application>
 
 </manifest>
