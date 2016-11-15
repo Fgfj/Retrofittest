@@ -131,14 +131,15 @@
 
         <activity android:name="testvh.yz.com.Perssion.PER_Act" />
         <activity android:name="testvh.yz.com.Animation.Traslation_Act" />
-        <activity android:name="testvh.yz.com.VitamioTest.Vita_ActTest"></activity>
-        <!--vitamio 视频第三方框架-->
+        <activity android:name="testvh.yz.com.VitamioTest.Vita_ActTest" />
+        <!-- vitamio 视频第三方框架 -->
         <activity
             android:name="io.vov.vitamio.activity.InitActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="testvh.yz.com.MyservletApitest.Apitest_Act"></activity>
     </application>
 
 </manifest>

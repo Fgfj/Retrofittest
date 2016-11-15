@@ -34,6 +34,7 @@ import java.util.List;
 import testvh.yz.com.Animation.Traslation_Act;
 import testvh.yz.com.Banner.BannerAct;
 import testvh.yz.com.Cirleroundview.Charttest;
+import testvh.yz.com.MyservletApitest.Apitest_Act;
 import testvh.yz.com.Perssion.PER_Act;
 import testvh.yz.com.RongyunIM.Rongyun_Act;
 import testvh.yz.com.RoundingImangeview.Roundimage;
@@ -71,7 +72,7 @@ public class Erweimacode extends AppCompatActivity {
     //扫描二维码
     public void go(View view) {
         Intent intentthiss = new Intent(this,CaptureActivity.class);
-        startActivityForResult(intentthiss,REQUEST_CODE);
+        startActivityForResult(intentthiss, REQUEST_CODE);
     }
 
     public void 去自定义图表(View view) {
@@ -100,6 +101,8 @@ public class Erweimacode extends AppCompatActivity {
     public void 图片旋转(View view) {startActivity(new Intent(this, Traslation_Act.class));
     }
     public void GoVitamio(View view) {startActivity(new Intent(this, Vita_ActTest.class));
+    }
+    public void Goapitest(View view) {startActivity(new Intent(this, Apitest_Act.class));
     }
     @Override
     protected void onResume() {
