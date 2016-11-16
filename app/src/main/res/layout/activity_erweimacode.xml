@@ -89,6 +89,11 @@
             android:text="myapitest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Button
+            android:onClick="Goindejsp"
+            android:text="Goindejsp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <ImageView

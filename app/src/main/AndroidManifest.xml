@@ -139,7 +139,8 @@
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name="testvh.yz.com.MyservletApitest.Apitest_Act"></activity>
+        <activity android:name="testvh.yz.com.MyservletApitest.Apitest_Act" />
+        <activity android:name="testvh.yz.com.MyservletApitest.MyindexJsp_Act"></activity>
     </application>
 
 </manifest>

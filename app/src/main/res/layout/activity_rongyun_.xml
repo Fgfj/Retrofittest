@@ -6,13 +6,52 @@
     android:orientation="vertical"
     tools:context="testvh.yz.com.RongyunIM.Rongyun_Act">
     <TextView
+        android:hint="链接json"
         android:id="@+id/rongyunserverconntect"
         android:layout_width="wrap_content"
         android:layout_height="40dp" />
     <TextView
+        android:hint="聊天室json"
         android:id="@+id/rongyuchartteamid"
         android:layout_width="wrap_content"
         android:layout_height="40dp" />
+    <EditText
+        android:id="@+id/myuid"
+        android:hint="输入自己的uid生成token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/myname"
+        android:hint="输入自己的name生成token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/gettoken"
+        android:text="getoken"
+        android:onClick="根据自己的uid获取token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/token_conntext"
+            android:text="获取token后链接自己"
+            android:onClick="获取token后链接"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+    <TextView
+        android:id="@+id/token_josn"
+        android:hint="自己服务器token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/otheruid"
+        android:hint="输入对方的uid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

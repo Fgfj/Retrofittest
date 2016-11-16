@@ -11,11 +11,17 @@ import android.support.v7.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
@@ -27,6 +33,7 @@ import io.rong.message.RichContentMessage;
 import io.rong.message.TextMessage;
 import io.rong.message.VoiceMessage;
 import io.rong.push.notification.PushNotificationMessage;
+import testvh.yz.com.OKHttp_Utils;
 import testvh.yz.com.retrofittest.R;
 
 /**
@@ -37,15 +44,28 @@ public class Rongyun_Act extends AppCompatActivity {
     private TextView textView;
     private TextView textView2;
 
+    @InjectView(value = R.id.myuid)
+    public EditText myuid;
+    @InjectView(value = R.id.myname)
+    public EditText myname;
+    @InjectView(value = R.id.token_josn)
+    public TextView tokenjson;
+    private String token;
+
+    @InjectView(value = R.id.otheruid)
+    public EditText otheruid;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rongyun_);
         textView = (TextView) findViewById(R.id.rongyunserverconntect);
         textView2 = (TextView) findViewById(R.id.rongyuchartteamid);
-        String token1="IVWXLYxksSQoOJknQ0q9TYmXK11Lcjn0DpCqMMGvdhcIglhjRbeHebH/J4CRIhI5xVsSnH4vVdcAQtrbKVn1aw==";
-        String token26594="xziJJeoWyNCJ5QcuUDqwGomXK11Lcjn0DpCqMMGvdhcIglhjRbeHeQAYIQfk3UenohmhCXcGGauxjen9wJh/8g==";
-        RongyunServer.connect(this, token1,
+        ButterKnife.inject(this);
+    }
+    public void 获取token后链接(View view) {
+        RongyunServer.connect(this, token,
                 new RongyunServer.Dopost() {
                     @Override
                     public void poststirng(String s) {
@@ -74,10 +94,38 @@ public class Rongyun_Act extends AppCompatActivity {
                     }
                 });
     }
+    public void 根据自己的uid获取token(View view) {
+        String uid = myuid.getText().toString();
+        String name = myname.getText().toString();
+        String url="http://192.168.6.153:8090/test/servlet/rongyunGetTokenS?userid="+uid+"&name="+name+"&portraitUri=http://www.rongcloud.cn/images/logo.png";
+        OKHttp_Utils.Response_Get(this, url, new OKHttp_Utils.Dopost() {
+            @Override
+            public void poststirng(String s) {
+                tokenjson.setText("token====" + s);
+                parsontoekn(s);
+            }
+
+            @Override
+            public void errorpoststirng(String s) {
+
+            }
+        });
+    }
+    //解析自己服务器的tokenjson
+    private void parsontoekn(String s) {
+       try{
+           JSONObject jsonObject=new JSONObject(s);
+           token = jsonObject.getString("token");
+
+       }catch (Exception e) {
+            e.printStackTrace();
+       }
+    }
+
     public void 启动会话界面(View view) {
         //启动会话界面
         if (RongIM.getInstance() != null)
-            RongIM.getInstance().startPrivateChat(this, "26594", "title");
+            RongIM.getInstance().startPrivateChat(this, otheruid.getText().toString(), "title");
     }
     public void 启动会话列表界面(View view) {
         //启动会话列表界面
@@ -95,7 +143,7 @@ public class Rongyun_Act extends AppCompatActivity {
             public UserInfo getUserInfo(String s) {
                 return new UserInfo("1", "yz", Uri.parse("https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r6s1g1.gif"));
             }
-        },true);
+        }, true);
     }
     public void 刷新用户信息(View view) {
         /**
@@ -135,6 +183,10 @@ public class Rongyun_Act extends AppCompatActivity {
         }
     }
     private NotificationManager notificationManager;
+
+
+
+
     private class MyReceiveMessageListener implements RongIMClient.OnReceiveMessageListener {
         /**
          * 收到消息的处理。

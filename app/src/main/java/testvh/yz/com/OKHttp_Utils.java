@@ -35,7 +35,7 @@ public class OKHttp_Utils {
     //get
     public static  void Response_Get(final Context context,String url,final Dopost dopost){
         OkHttpClient  okHttpClient=new OkHttpClient();
-        Request request = new Request.Builder().url(url).addHeader("DwSdk-Head", "braygame").build();
+        Request request = new Request.Builder().url(url).addHeader("test-Head", "test").build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
             @Override

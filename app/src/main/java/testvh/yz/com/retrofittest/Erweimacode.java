@@ -35,6 +35,7 @@ import testvh.yz.com.Animation.Traslation_Act;
 import testvh.yz.com.Banner.BannerAct;
 import testvh.yz.com.Cirleroundview.Charttest;
 import testvh.yz.com.MyservletApitest.Apitest_Act;
+import testvh.yz.com.MyservletApitest.MyindexJsp_Act;
 import testvh.yz.com.Perssion.PER_Act;
 import testvh.yz.com.RongyunIM.Rongyun_Act;
 import testvh.yz.com.RoundingImangeview.Roundimage;
@@ -103,6 +104,8 @@ public class Erweimacode extends AppCompatActivity {
     public void GoVitamio(View view) {startActivity(new Intent(this, Vita_ActTest.class));
     }
     public void Goapitest(View view) {startActivity(new Intent(this, Apitest_Act.class));
+    }
+    public void Goindejsp(View view) {startActivity(new Intent(this, MyindexJsp_Act.class));
     }
     @Override
     protected void onResume() {
