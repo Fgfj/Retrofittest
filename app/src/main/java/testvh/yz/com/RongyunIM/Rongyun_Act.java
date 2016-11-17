@@ -141,28 +141,23 @@ public class Rongyun_Act extends AppCompatActivity {
         RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
             @Override
             public UserInfo getUserInfo(String s) {
-                return new UserInfo("1", "yz", Uri.parse("https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r6s1g1.gif"));
+                return new UserInfo(myuid.getText().toString(), myname.getText().toString(), Uri.parse("https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r6s1g1.gif"));
             }
         }, true);
     }
     public void 刷新用户信息(View view) {
         /**
          * 刷新用户缓存数据。
-         *
          * @param userInfo 需要更新的用户缓存数据。
          */
         RongIM.getInstance().refreshUserInfoCache(
-                new UserInfo("1", "1", Uri.parse("http://rongcloud-web.qiniudn.com/docs_demo_rongcloud_logo.png")));
-        RongIM.getInstance().refreshUserInfoCache(
-                new UserInfo("26594", "26594", Uri.parse("http://rongcloud-web.qiniudn.com/docs_demo_rongcloud_logo.png")));
+                new UserInfo(myuid.getText().toString(), "刷新name", Uri.parse("http://rongcloud-web.qiniudn.com/docs_demo_rongcloud_logo.png")));
 
     }
     public void 创建讨论组会话并进入会话界面(View view) {
         List<String> listchat=new ArrayList<>();
-        listchat.add("1");
-        listchat.add("26594");
-        listchat.add("2");
-        listchat.add("3");
+        listchat.add(myuid.getText().toString());
+        listchat.add(otheruid.getText().toString());
         String s = textView2.getText().toString();
         if(TextUtils.isEmpty(s)) {
             //未创建讨论组
