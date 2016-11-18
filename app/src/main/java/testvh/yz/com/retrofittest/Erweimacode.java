@@ -5,8 +5,11 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
@@ -18,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.alipay.euler.andfix.patch.PatchManager;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -25,6 +29,8 @@ import com.google.zxing.common.BitMatrix;
 import com.squareup.picasso.Picasso;
 import com.stx.xhb.xbanner.XBanner;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -36,6 +42,7 @@ import testvh.yz.com.Banner.BannerAct;
 import testvh.yz.com.Cirleroundview.Charttest;
 import testvh.yz.com.MyservletApitest.Apitest_Act;
 import testvh.yz.com.MyservletApitest.MyindexJsp_Act;
+import testvh.yz.com.OKHttp_Utils;
 import testvh.yz.com.Perssion.PER_Act;
 import testvh.yz.com.RongyunIM.Rongyun_Act;
 import testvh.yz.com.RoundingImangeview.Roundimage;
@@ -51,6 +58,7 @@ import testvh.yz.com.SQL.Teacher;
 import testvh.yz.com.SQL.TeacherDao;
 import testvh.yz.com.UIstatus.UiStatus;
 import testvh.yz.com.VitamioTest.Vita_ActTest;
+import testvh.yz.com.addfix.AddFixManage;
 import testvh.yz.com.karics.karics.library.zxing.android.CaptureActivity;
 
 
@@ -67,9 +75,9 @@ public class Erweimacode extends AppCompatActivity {
         setContentView(R.layout.activity_erweimacode);
         imageView = (ImageView) findViewById(R.id.imageerweima);
         String[] split = s.split("=");
-        Log.v("split", Arrays.toString(split));
-    }
 
+
+    }
     //扫描二维码
     public void go(View view) {
         Intent intentthiss = new Intent(this,CaptureActivity.class);

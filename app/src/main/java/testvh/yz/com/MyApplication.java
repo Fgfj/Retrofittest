@@ -3,9 +3,15 @@ package testvh.yz.com;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import com.alipay.euler.andfix.patch.PatchManager;
+
+import java.io.File;
+import java.io.IOException;
 
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
@@ -15,6 +21,7 @@ import io.rong.imlib.model.UserInfo;
 import io.rong.message.LocationMessage;
 import io.rong.message.RichContentMessage;
 import testvh.yz.com.SQL.GreenDaoManager;
+import testvh.yz.com.addfix.AddFixManage;
 
 /**
  * Created by yuzhou on 2016/10/20.
@@ -27,6 +34,13 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        /**
+         * andfix
+         */
+        PatchManager patchManager=AddFixManage.getInstance(getApplicationContext());
+        patchManager.init("1.0");//current version
+        patchManager.loadPatch();
+
         instance = this;
         GreenDaoManager.getInstance();
         RongIM.init(this);
@@ -34,7 +48,7 @@ public class MyApplication extends Application {
             @Override
             public boolean onUserPortraitClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
 //                当点击用户头像后执行。
-                Toast.makeText(getApplicationContext(),"name=="+userInfo.getName(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "name==" + userInfo.getName(), Toast.LENGTH_SHORT).show();
                 return false;
             }
 

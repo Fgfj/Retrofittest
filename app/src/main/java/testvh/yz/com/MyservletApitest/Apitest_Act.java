@@ -1,13 +1,21 @@
 package testvh.yz.com.MyservletApitest;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+
+import java.io.File;
+import java.io.IOException;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import testvh.yz.com.OKHttp_Utils;
+import testvh.yz.com.addfix.AddFixManage;
+import testvh.yz.com.retrofittest.Erweimacode;
 import testvh.yz.com.retrofittest.R;
 
 public class Apitest_Act extends AppCompatActivity {
@@ -23,7 +31,17 @@ public class Apitest_Act extends AppCompatActivity {
             @Override
             public void poststirng(String s) {
                 Log.e("myApi",s+"==");
-                textView.setText(s+"==");
+                textView.setText(s + "==");
+                textView.append("===========");//fixapk 添加的代码
+                 try {
+                            File file = new File(Environment.getExternalStorageDirectory().getPath() + "//" + s+".apatch");
+                            if (file.exists()) {
+                                Log.e("myApi",Environment.getExternalStorageDirectory().getPath() + "//" + s+".apatch");
+                                AddFixManage.getInstance(Apitest_Act.this).addPatch(Environment.getExternalStorageDirectory().getPath() + "//" + s+".apatch");
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
             }
 
             @Override
