@@ -28,6 +28,7 @@ public class PER_Act extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.CALL_PHONE)
                 != PackageManager.PERMISSION_GRANTED) {
+
             // 是否需要给用户解释?
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.READ_CONTACTS)) {
