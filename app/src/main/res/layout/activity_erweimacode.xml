@@ -94,6 +94,11 @@
             android:text="Goindejsp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Button
+            android:onClick="手势"
+            android:text="Gestures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <ImageView

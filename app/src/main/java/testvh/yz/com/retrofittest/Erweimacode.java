@@ -40,6 +40,7 @@ import java.util.List;
 import testvh.yz.com.Animation.Traslation_Act;
 import testvh.yz.com.Banner.BannerAct;
 import testvh.yz.com.Cirleroundview.Charttest;
+import testvh.yz.com.Gesturestest.Gestures_Act;
 import testvh.yz.com.MyservletApitest.Apitest_Act;
 import testvh.yz.com.MyservletApitest.MyindexJsp_Act;
 import testvh.yz.com.OKHttp_Utils;
@@ -114,6 +115,8 @@ public class Erweimacode extends AppCompatActivity {
     public void Goapitest(View view) {startActivity(new Intent(this, Apitest_Act.class));
     }
     public void Goindejsp(View view) {startActivity(new Intent(this, MyindexJsp_Act.class));
+    }
+    public void 手势(View view) {startActivity(new Intent(this, Gestures_Act.class));
     }
     @Override
     protected void onResume() {
