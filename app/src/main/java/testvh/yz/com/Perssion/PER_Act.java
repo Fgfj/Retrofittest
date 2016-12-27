@@ -41,6 +41,7 @@ public class PER_Act extends AppCompatActivity {
             }
         } else {
             Toast.makeText(PER_Act.this, " 有权限call phone 进行操作", Toast.LENGTH_SHORT).show();
+            return;
         }
     }
 
@@ -57,13 +58,13 @@ public class PER_Act extends AppCompatActivity {
                             .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    finish();
+//                                    finish();
                                 }
                             })
                             .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    finish();
+//                                    finish();
                                 }
                             }).create();
                     dialog.show();

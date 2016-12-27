@@ -45,7 +45,8 @@ public class MyindexJsp_Act extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myindex_jsp_);
         ButterKnife.inject(this);
-        webView.loadUrl("http://192.168.6.153:8090/test/index.jsp");
+//        webView.loadUrl("http://192.168.6.153:8090/test/index.jsp");
+        webView.loadUrl("https://192.168.6.153:8443/test/index.jsp");
         webView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_INSET);//滚动条风格
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);//js

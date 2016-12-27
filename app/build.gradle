@@ -10,7 +10,14 @@ android {
         targetGenDir 'src/main/java'
     }
 
-
+    signingConfigs {
+        config {
+            storeFile file('F:/tomcat.keystore')
+            keyAlias 'yz'
+            keyPassword '123456yu'
+            storePassword '123456yu'
+        }
+    }
     defaultConfig {
         applicationId "testvh.yz.com.retrofittest"
         minSdkVersion 19
