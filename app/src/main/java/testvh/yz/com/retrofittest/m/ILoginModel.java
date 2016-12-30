@@ -18,11 +18,16 @@ public class ILoginModel implements LoginModel {
     private HRetrofitNetHelper instance;
     private LoginService loginService;
 
+    public ILoginModel() {
+        instance = HRetrofitNetHelper.getInstance();
+        loginService = instance.mRetrofit.create(LoginService.class);
+    }
+
     @Override
     public void login(String username, String password, final LoginCallback listener) {
         //实现登陆
-        instance = HRetrofitNetHelper.getInstance();
-        loginService = instance.mRetrofit.create(LoginService.class);
+//        instance = HRetrofitNetHelper.getInstance();
+//        loginService = instance.mRetrofit.create(LoginService.class);
         loginService.post().observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<Avd>() {

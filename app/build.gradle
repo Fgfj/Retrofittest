@@ -9,12 +9,17 @@ android {
         schemaVersion 6
         targetGenDir 'src/main/java'
     }
-
+    sourceSets {
+        main {
+            jniLibs.srcDirs 'libs'
+            jni.srcDirs = []
+        }
+    }
     signingConfigs {
         config {
-            storeFile file('F:/tomcat.keystore')
-            keyAlias 'yz'
+            keyAlias 'test'
             keyPassword '123456yu'
+            storeFile file('F:/barygame')
             storePassword '123456yu'
         }
     }
@@ -24,11 +29,21 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        ndk {
+            moduleName "hello_jni"
+            ldLibs "log","z","m"
+            abiFilters "armeabi","armeabi-v7a","x86","x86_64"
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+            debuggable false
         }
     }
 //    productFlavors {
@@ -93,4 +108,5 @@ dependencies {
     compile project(':status-ui')
     compile project(':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable')
     compile project(':InitActivity')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }

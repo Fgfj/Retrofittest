@@ -1,10 +1,15 @@
 package testvh.yz.com.UIstatus;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import org.ayo.view.status.DefaultStatus;
 import org.ayo.view.status.DefaultStatusProvider;
@@ -20,6 +25,12 @@ import testvh.yz.com.retrofittest.R;
 public class UiStatus extends AppCompatActivity {
     StatusUIManager statusUIManager;
     View contentView;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +43,7 @@ public class UiStatus extends AppCompatActivity {
         View btn_logic_fail = findViewById(R.id.btn_logic_fail);
         View btn_local_error = findViewById(R.id.btn_local_error);
         View btn_empty = findViewById(R.id.btn_empty);
-        btn_refresh.setOnClickListener(new View.OnClickListener(){
+        btn_refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "正在加载...", Toast.LENGTH_SHORT).show();
@@ -45,7 +56,7 @@ public class UiStatus extends AppCompatActivity {
             }
         });
 
-        btn_empty.setOnClickListener(new View.OnClickListener(){
+        btn_empty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "数据为空", Toast.LENGTH_SHORT).show();
@@ -58,7 +69,7 @@ public class UiStatus extends AppCompatActivity {
             }
         });
 
-        btn_netoff.setOnClickListener(new View.OnClickListener(){
+        btn_netoff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "没网了", Toast.LENGTH_SHORT).show();
@@ -71,7 +82,7 @@ public class UiStatus extends AppCompatActivity {
             }
         });
 
-        btn_server_error.setOnClickListener(new View.OnClickListener(){
+        btn_server_error.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "服务器出问题了", Toast.LENGTH_SHORT).show();
@@ -84,7 +95,7 @@ public class UiStatus extends AppCompatActivity {
             }
         });
 
-        btn_logic_fail.setOnClickListener(new View.OnClickListener(){
+        btn_logic_fail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "业务逻辑失败", Toast.LENGTH_SHORT).show();
@@ -96,7 +107,7 @@ public class UiStatus extends AppCompatActivity {
                 });
             }
         });
-        btn_local_error.setOnClickListener(new View.OnClickListener(){
+        btn_local_error.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "本地逻辑出错", Toast.LENGTH_SHORT).show();
@@ -108,6 +119,9 @@ public class UiStatus extends AppCompatActivity {
                 });
             }
         });
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void initStatusUI() {
@@ -183,7 +197,49 @@ public class UiStatus extends AppCompatActivity {
                             }
                         }));
     }
+
     public Context getActivity() {
         return this;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "UiStatus Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://testvh.yz.com.UIstatus/http/host/path")
+        );
+
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "UiStatus Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://testvh.yz.com.UIstatus/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
     }
 }

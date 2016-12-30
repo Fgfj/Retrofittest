@@ -41,6 +41,7 @@ import testvh.yz.com.Animation.Traslation_Act;
 import testvh.yz.com.Banner.BannerAct;
 import testvh.yz.com.Cirleroundview.Charttest;
 import testvh.yz.com.Gesturestest.Gestures_Act;
+import testvh.yz.com.Jniactivity;
 import testvh.yz.com.MyservletApitest.Apitest_Act;
 import testvh.yz.com.MyservletApitest.MyindexJsp_Act;
 import testvh.yz.com.OKHttp_Utils;
@@ -67,6 +68,8 @@ public class Erweimacode extends AppCompatActivity {
     private final int REQUEST_CODE = 110;
     private ImageView imageView;
     private TextView tokentextView;
+
+
 
     String s="http://bestin.net.cn/html/temp/talentShow/201611/2016111015432680077.jpg?width=2624&height=1968";
 
@@ -117,6 +120,8 @@ public class Erweimacode extends AppCompatActivity {
     public void Goindejsp(View view) {startActivity(new Intent(this, MyindexJsp_Act.class));
     }
     public void 手势(View view) {startActivity(new Intent(this, Gestures_Act.class));
+    }
+    public void JNI(View view) {startActivity(new Intent(this, Jniactivity.class));
     }
     @Override
     protected void onResume() {
